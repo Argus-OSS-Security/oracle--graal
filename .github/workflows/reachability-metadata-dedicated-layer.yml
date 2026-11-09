@@ -40,15 +40,16 @@
 #
 name: Weekly Dedicated-Layer Reachability Metadata Tests
 
-on:
-  pull_request:
-    paths:
-      - '.github/workflows/reachability-metadata-template.yml'
-      - '.github/workflows/reachability-metadata-dedicated-layer.yml'
-  schedule:
-  - cron: '0 3 * * 1'
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     paths:
+#       - '.github/workflows/reachability-metadata-template.yml'
+#       - '.github/workflows/reachability-metadata-dedicated-layer.yml'
+#   schedule:
+#   - cron: '0 3 * * 1'
+#   workflow_dispatch:
+# 
 jobs:
   call-template:
     uses: './.github/workflows/reachability-metadata-template.yml'

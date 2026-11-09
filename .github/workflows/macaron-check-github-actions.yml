@@ -40,12 +40,13 @@
 #
 name: Check GitHub Actions with Macaron
 
-on:
-  pull_request:
-    paths:
-      - '.github/workflows/**'
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     paths:
+#       - '.github/workflows/**'
+#   workflow_dispatch:
+# 
 permissions:
   contents: read
 

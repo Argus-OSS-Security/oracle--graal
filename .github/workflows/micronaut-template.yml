@@ -40,13 +40,14 @@
 #
 name: Weekly Micronaut Tests
 
-on:
-  workflow_call:
-    inputs:
-      NATIVE_IMAGE_OPTIONS:
-        required: false
-        type: string
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       NATIVE_IMAGE_OPTIONS:
+#         required: false
+#         type: string
+# 
 env:
   MICRONAUT_CORE_PATH: ${{ github.workspace }}/micronaut-core
   # Micronaut Launch generates -H:+SharedArenaSupport by default. Keep experimental

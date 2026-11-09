@@ -2,12 +2,13 @@
 ---
 name: Codespell
 
-on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches: [master]
+#   pull_request:
+#     branches: [master]
+# 
 permissions:
   contents: read
 

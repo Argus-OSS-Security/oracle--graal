@@ -40,15 +40,16 @@
 #
 name: Weekly Quarkus Tests
 
-on:
-  pull_request:
-    paths:
-      - '.github/workflows/quarkus.yml'
-      - '.github/workflows/quarkus-template.yml'
-  schedule:
-  - cron: '0 3 * * 1'
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     paths:
+#       - '.github/workflows/quarkus.yml'
+#       - '.github/workflows/quarkus-template.yml'
+#   schedule:
+#   - cron: '0 3 * * 1'
+#   workflow_dispatch:
+# 
 jobs:
   call-template:
     uses: './.github/workflows/quarkus-template.yml'

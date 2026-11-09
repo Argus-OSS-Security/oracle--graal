@@ -40,15 +40,16 @@
 #
 name: Weekly Micronaut Tests
 
-on:
-  pull_request:
-    paths:
-      - '.github/workflows/micronaut-template.yml'
-      - '.github/workflows/micronaut.yml'
-  schedule:
-  - cron: '0 2 * * 1'
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     paths:
+#       - '.github/workflows/micronaut-template.yml'
+#       - '.github/workflows/micronaut.yml'
+#   schedule:
+#   - cron: '0 2 * * 1'
+#   workflow_dispatch:
+# 
 jobs:
   call-template:
     uses: './.github/workflows/micronaut-template.yml'

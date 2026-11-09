@@ -40,17 +40,18 @@
 #
 name: Weekly Reachability Metadata Tests
 
-on:
-  workflow_call:
-    inputs:
-      NATIVE_IMAGE_OPTIONS:
-        required: false
-        type: string
-      LAYERED_TESTS:
-        required: false
-        type: string
-        default: none
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       NATIVE_IMAGE_OPTIONS:
+#         required: false
+#         type: string
+#       LAYERED_TESTS:
+#         required: false
+#         type: string
+#         default: none
+# 
 env:
   REACHABILITY_METADATA_PATH: ${{ github.workspace }}/graalvm-reachability-metadata
   NATIVE_IMAGE_OPTIONS: ${{ inputs.NATIVE_IMAGE_OPTIONS }}

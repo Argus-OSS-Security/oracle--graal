@@ -42,51 +42,52 @@
 name: Build GraalVM
 description: 'Build GraalVM and set up environment for testing'
 
-on:
-  workflow_call:
-    inputs:
-      dynamic-imports:
-        default: '/substratevm'
-        description: 'Value for mx --dy option'
-        required: false
-        type: string
-      native-images:
-        default: 'native-image'
-        description: 'Value for mx --native-images option'
-        required: false
-        type: string
-      components:
-        default: 'Native Image'
-        description: 'Value for mx --components option'
-        required: false
-        type: string
-    outputs:
-      artifact-name:
-        description: "The name of the GraalVM artifact"
-        value: ${{ jobs.build_from_source.outputs.artifact-name }}
-      artifact-file-name:
-        description: "The file name of the GraalVM artifact"
-        value: ${{ jobs.build_from_source.outputs.artifact-file-name }}
-  # Enable manual dispatch of the workflow
-  # see https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow
-  workflow_dispatch:
-    inputs:
-      dynamic-imports:
-        default: '/substratevm'
-        description: 'Value for mx --dy option'
-        required: true
-        type: string
-      native-images:
-        default: 'native-image'
-        description: 'Value for mx --native-images option'
-        required: true
-        type: string
-      components:
-        default: 'Native Image'
-        description: 'Value for mx --components option'
-        required: true
-        type: string
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       dynamic-imports:
+#         default: '/substratevm'
+#         description: 'Value for mx --dy option'
+#         required: false
+#         type: string
+#       native-images:
+#         default: 'native-image'
+#         description: 'Value for mx --native-images option'
+#         required: false
+#         type: string
+#       components:
+#         default: 'Native Image'
+#         description: 'Value for mx --components option'
+#         required: false
+#         type: string
+#     outputs:
+#       artifact-name:
+#         description: "The name of the GraalVM artifact"
+#         value: ${{ jobs.build_from_source.outputs.artifact-name }}
+#       artifact-file-name:
+#         description: "The file name of the GraalVM artifact"
+#         value: ${{ jobs.build_from_source.outputs.artifact-file-name }}
+#   # Enable manual dispatch of the workflow
+#   # see https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow
+#   workflow_dispatch:
+#     inputs:
+#       dynamic-imports:
+#         default: '/substratevm'
+#         description: 'Value for mx --dy option'
+#         required: true
+#         type: string
+#       native-images:
+#         default: 'native-image'
+#         description: 'Value for mx --native-images option'
+#         required: true
+#         type: string
+#       components:
+#         default: 'Native Image'
+#         description: 'Value for mx --components option'
+#         required: true
+#         type: string
+# 
 jobs:
   build_from_source:
     name: Build GraalVM
